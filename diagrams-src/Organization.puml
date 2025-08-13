@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+skinparam actorStyle "awesome"
+
+actor "پرسنل" as actor1
+
+usecase "مدیریت سازمان" as UC1
+usecase "مشاهده درخت سازمان" as UC2
+usecase "شرکت جدید" as UC3
+usecase "شعبه جدید" as UC4
+usecase "ویرایش شرکت" as UC5
+usecase "ویرایش شعبه" as UC6
+usecase "حذف شرکت" as UC7
+usecase "حذف شعبه" as UC8
+usecase "انتقال شرکت" as UC9
+usecase "انتقال شعبه" as UC10
+
+actor1 --> UC1
+UC1 ..> UC2
+UC1 ..> UC3
+UC1 ..> UC4
+UC1 ..> UC5
+UC1 ..> UC6
+UC1 ..> UC7
+UC1 ..> UC8
+UC1 ..> UC9
+UC1 ..> UC10
+@enduml
