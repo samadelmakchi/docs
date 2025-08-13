@@ -24,6 +24,3 @@
 ---
 
 ![مدیریت سازمان](diagrams/organization.svg)
-
-
-![مدیریت سازمان](diagrams/organization.png)
