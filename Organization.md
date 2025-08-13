@@ -25,35 +25,3 @@
 
 ![مدیریت سازمان](diagrams/Organization.svg)
 
-
-```mermaid
-graph TD
-
-  %% actors
-  actor1((پرسنل))
-
-  %% use cases
-  UC1[مدیریت سازمان]
-  UC2[مشاهده درخت سازمان]
-  UC3[شرکت جدید]
-  UC4[شعبه جدید]
-  UC5[ویرایش شرکت]
-  UC6[ویرایش شعبه]
-  UC7[حذف شرکت]
-  UC8[حذف شعبه]
-  UC9[انتقال شرکت]
-  UC10[انتقال شعبه]
-
-
-  actor1 --> UC1
-  UC1 -.-> UC2
-  UC1 --> UC3
-  UC1 --> UC4
-  UC1 --> UC5
-  UC1 --> UC6
-  UC1 --> UC7
-  UC1 --> UC8
-  UC1 --> UC9
-  UC1 --> UC10
-
-```
