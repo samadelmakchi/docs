@@ -27,14 +27,13 @@ jobs:
       - name: Generate PNG & SVG diagrams
         run: |
           mkdir -p diagrams
-          for file in diagrams-src/*.puml; do
-            filename=$(basename "$file" .puml)
-            echo "Rendering $filename"
-            java -jar plantuml.jar -tsvg  "$file" -o ../diagrams
-            java -jar plantuml.jar -tpng  "$file" -o ../diagrams
-            # تغییر نام خروجی‌ها به نام اصلی فایل
-            mv diagrams/$filename.svg diagrams/$filename.svg
-            mv diagrams/$filename.png diagrams/$filename.png
+          find diagrams-src -name '*.puml' | while read file; do
+            relpath="${file#diagrams-src/}"                # مسیر نسبی از diagrams-src
+            outdir="diagrams/$(dirname "$relpath")"        # پوشه خروجی
+            mkdir -p "$outdir"
+            echo "Rendering $file → $outdir"
+            java -jar plantuml.jar -tsvg "$file" -o "$PWD/$outdir"
+            java -jar plantuml.jar -tpng "$file" -o "$PWD/$outdir"
           done
 
       - name: Commit and push generated diagrams
