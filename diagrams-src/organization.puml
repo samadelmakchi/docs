@@ -14,6 +14,7 @@ usecase "حذف شرکت" as UC7
 usecase "حذف شعبه" as UC8
 usecase "انتقال شرکت" as UC9
 usecase "انتقال شعبه" as UC10
+usecase "تست" as UC11
 
 actor1 --> UC1
 UC1 ..> UC2
@@ -25,4 +26,5 @@ UC1 ..> UC7
 UC1 ..> UC8
 UC1 ..> UC9
 UC1 ..> UC10
+UC1 ..> UC11
 @enduml
