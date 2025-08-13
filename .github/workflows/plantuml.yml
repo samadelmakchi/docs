@@ -1,10 +1,8 @@
 name: Generate PlantUML Diagrams
 
 on:
-  push:
-    paths:
-      - 'diagrams-src/**/*.puml'
-  workflow_dispatch: # اجرا به صورت دستی هم فعال باشد
+  push:          # هر بار که چیزی روی ریپو پوش می‌شود
+  workflow_dispatch: # امکان اجرای دستی
 
 jobs:
   render-plantuml:
