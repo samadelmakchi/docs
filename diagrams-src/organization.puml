@@ -28,3 +28,26 @@ UC1 ..> UC9
 UC1 ..> UC10
 UC1 ..> UC11
 @enduml
+
+
+
+@startuml
+!define RECTANGLE class
+skinparam state {
+  BackgroundColor<<Employee>> LightBlue
+  BackgroundColor<<Manager>> LightGreen
+  BackgroundColor<<HR>> LightYellow
+  BorderColor Black
+  ArrowColor Black
+}
+
+[*] --> Draft <<Employee>>
+
+Draft <<Employee>> --> Submitted <<Employee>> : ثبت و ارسال حکم
+Submitted <<Employee>> --> Under_Review <<Manager>> : شروع بررسی
+Under_Review <<Manager>> --> Approved <<HR>> : تأیید
+Under_Review <<Manager>> --> Rejected <<HR>> : رد
+Approved <<HR>> --> Canceled <<HR>> : ابطال
+Rejected <<HR>> --> Submitted <<Employee>> : اصلاح و ارسال مجدد
+
+@enduml
